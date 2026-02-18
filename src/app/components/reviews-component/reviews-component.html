@@ -1,0 +1,46 @@
+<div
+  id="divReviews"
+  class="position-relative d-flex align-items-center justify-content-center overflow-hidden"
+>
+  <div id="divBg"></div>
+  <div class="container position-relative z-1">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-7 text-center">
+        <h2 class="text-white fw-light mb-5 text-uppercase">Les avis de nos clients</h2>
+        <swiper-container
+          slides-per-view="1"
+          pagination="true"
+          navigation="true"
+          loop="true"
+          autoplay-delay="5000"
+          class="reviews-slider"
+        >
+          @for (review of listeReviews(); track review.id) {
+            <swiper-slide class="py-4">
+              <div class="reviewCard p-5 rounded-5">
+                <div class="reviewInfos">
+                  <p class="h3 text-white mb-4">
+                    {{ review.content }}
+                  </p>
+
+                  <div class="stars mb-3">
+                    <span class="text-warning small" [innerHTML]="review.rating | note"> </span>
+                  </div>
+
+                  <hr class="w-25 mx-auto border-white opacity-25" />
+
+                  <footer class="mt-4">
+                    <div class="h5 text-white">{{ review.author }}</div>
+                    <small class="text-white-50">{{
+                      review.created_at | date: 'dd MMMM yyyy' : '' : 'fr'
+                    }}</small>
+                  </footer>
+                </div>
+              </div>
+            </swiper-slide>
+          }
+        </swiper-container>
+      </div>
+    </div>
+  </div>
+</div>

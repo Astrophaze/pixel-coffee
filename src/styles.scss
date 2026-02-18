@@ -1,4 +1,7 @@
 @use 'variables';
+@use 'swiper/css';
+@use 'swiper/css/navigation';
+@use 'swiper/css/pagination';
 
 body {
     font-family: variables.$Poppins;

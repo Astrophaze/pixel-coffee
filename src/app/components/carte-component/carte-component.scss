@@ -1,10 +1,11 @@
 @use '../../../variables';
 
 #divCarte {
+  height: 100vh;
   background-color: variables.$GlobalBrown;
   h2 {
     color: variables.$WhiteTextColor;
-    font-size: 2rem;
+    font-size: 32px;
     letter-spacing: 1px;
   }
   .card {

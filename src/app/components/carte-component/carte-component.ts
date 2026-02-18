@@ -1,10 +1,11 @@
 import { Component, signal } from '@angular/core';
 import { ProduitModel } from '../../models/Produit-model';
 import { ApiService } from '../../services/api-service';
+import { TruncatePipe } from '../../pipes/truncate-pipe';
 
 @Component({
   selector: 'app-carte-component',
-  imports: [],
+  imports: [TruncatePipe],
   templateUrl: './carte-component.html',
   styleUrl: './carte-component.scss',
 })

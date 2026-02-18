@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ArticleModel } from '../models/Article-model';
 import { ProduitModel } from '../models/Produit-model';
+import { ReviewModel } from '../models/Review-model';
 
 @Injectable({
   providedIn: 'root',
@@ -17,6 +18,10 @@ export class ApiService {
 
   fetchProducts() {
     return this.http.get<ProduitModel[]>(`${this.baseUrl}products.php`);
+  }
+
+   fetchReviews() {
+    return this.http.get<ReviewModel[]>(`${this.baseUrl}reviews.php`);
   }
 
   envoyerFormulaire(formValues: FormData) {
