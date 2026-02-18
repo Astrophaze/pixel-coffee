@@ -1,0 +1,19 @@
+@use '../../../variables';
+
+#divCarte {
+  background-color: variables.$GlobalBrown;
+  h2 {
+    color: variables.$WhiteTextColor;
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+  .card {
+    overflow: hidden;
+    .divInfos {
+      background-color: variables.$WhiteTextColor;
+      h3 {
+        color: #333;
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+<div id="divCarte" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-5 fw-bold">La carte</h2>
+
+    <div class="row g-4 justify-content-center">
+      @for (produit of listeProduits(); track produit.id) {
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="card h-100 border-0 rounded-4 shadow-sm">
+            <div class="ratio ratio-16x9">
+              <img
+                [src]="produit.image_url"
+                [alt]="produit.name"
+                class="card-img-top rounded-top-4 object-fit-cover"
+              />
+            </div>
+
+            <div class="divInfos text-center p-4">
+              <h3 class="h5 mb-1">{{ produit.name }}</h3>
+              <p class="text-muted small mb-2">{{ produit.description }}</p>
+              <div>{{ produit.price }} €</div>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div>

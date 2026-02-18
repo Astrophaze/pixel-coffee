@@ -1,0 +1,12 @@
+<div id="divHeader" class="position-relative">
+    @if(dataArticle(); as article) {
+        <div class="card text-center">
+            <h2 class="py-3">{{ article.titre }}</h2>
+            <small class="pb-3">{{ article.contenu}}</small>
+            <div id="divBtn" class="py-3">
+                <a [href]="article.href_lien" class="btn btnVoirCarte py-2">{{ article.libelle_lien }}</a>
+            </div>
+        </div>
+    }
+
+</div>

@@ -1,0 +1,16 @@
+@use '../../../variables';
+
+#divMenu {
+    background-color: variables.$BrownMenu;
+    height: 10vh;
+    #nomSiteA {
+        color: variables.$WhiteTextColor;
+        #nomSite {
+            font-size: 18px;
+        }
+    }
+    .nav-link {
+        color: variables.$WhiteTextColor;
+        font-size: 18px;
+    }
+}
