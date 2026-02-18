@@ -1,0 +1,32 @@
+@use '../../../variables';
+
+#divContact {
+    font-family: variables.$Poppins;
+
+    #divArticle {
+        h2 {
+            color: variables.$DarkBlue;
+            font-size: 24px;
+        }
+        p {
+            font-size: 14px;
+        }
+    }
+
+    .form-control {
+        font-size: 13px;
+        border-radius: 4px;
+        
+        &::placeholder {
+            color: #888;
+        }
+    }
+
+    #btnSendForm {
+        background-color: variables.$GlobalBrown;
+        color: variables.$WhiteTextColor;
+        border-radius: 4px;
+        border: none;
+        font-size: 14px;
+    }
+}

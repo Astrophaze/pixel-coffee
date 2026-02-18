@@ -1,8 +1,93 @@
-<div id="divContact" class="py-5 my-5">
+<div id="divContact" class="container py-5">
     @if(dataArticle(); as article) {
-        <div id="divArticle" class="text-center">
-            <h2>{{ article.titre }}</h2>
-            <strong>{{ article.contenu }}</strong>
+        <div id="divArticle" class="text-center mb-5">
+            <h2 class="fw-bold">{{ article.titre }}</h2>
+            <p>{{ article.contenu }}</p>
         </div>
-        }
+    }
+
+    <div id="divFormulaire" class="mx-auto" style="max-width: 600px;">
+        <form [formGroup]="formulaire" (ngSubmit)="envoyerFormulaire()">
+            
+            <div class="row g-3 mb-3">
+                <div class="col-6">
+                    <input type="text" class="form-control" placeholder="Prénom" formControlName="prenom">
+                    @if (formulaire.get('prenom')?.touched) {
+                        @if(formulaire.get('prenom')?.hasError('required')) {
+                            <small class="text-danger">Le prénom est obligatoire</small>
+                        }
+                        @if(formulaire.get('prenom')?.hasError('minlength')) {
+                            <small class="text-danger">Le prénom est trop court (3 car. min)</small>
+                        }
+                        @if(formulaire.get('prenom')?.hasError('maxlength')) {
+                            <small class="text-danger">Le prénom est trop long (50 car. max)</small>
+                        }
+                    }
+                </div>
+
+                <div class="col-6">
+                    <input type="text" class="form-control" placeholder="Nom" formControlName="nom">
+                    @if (formulaire.get('nom')?.touched) {
+                        @if(formulaire.get('nom')?.hasError('required')) {
+                            <small class="text-danger">Le nom est obligatoire</small>
+                        }
+                        @if(formulaire.get('nom')?.hasError('minlength')) {
+                            <small class="text-danger">Le nom est trop court (3 car. min)</small>
+                        }
+                        @if(formulaire.get('nom')?.hasError('maxlength')) {
+                            <small class="text-danger">Le nom est trop long (50 car. max)</small>
+                        }
+                    }
+                </div>
+            </div>
+
+            <div class="row g-3 mb-3">
+                <div class="col-6">
+                    <input type="email" class="form-control" placeholder="Adresse e-mail" formControlName="email">
+                    @if (formulaire.get('email')?.touched) {
+                        @if(formulaire.get('email')?.hasError('required')) {
+                            <small class="text-danger">L'email est obligatoire</small>
+                        }
+                        @if(formulaire.get('email')?.hasError('email')) {
+                            <small class="text-danger">Format d'email invalide</small>
+                        }
+                        @if(formulaire.get('email')?.hasError('maxlength')) {
+                            <small class="text-danger">L'email est trop long (50 car. max)</small>
+                        }
+                    }
+                </div>
+
+                <div class="col-6">
+                    <input type="text" class="form-control" placeholder="Entreprise" formControlName="entreprise">
+                    @if (formulaire.get('entreprise')?.touched) {
+                        @if(formulaire.get('entreprise')?.hasError('maxlength')) {
+                            <small class="text-danger">Le nom d'entreprise est trop long (100 car. max)</small>
+                        }
+                    }
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <textarea class="form-control" formControlName="message" rows="5" placeholder="Votre message"></textarea>
+                @if (formulaire.get('message')?.touched) {
+                    @if(formulaire.get('message')?.hasError('required')) {
+                        <small class="text-danger">Le message est obligatoire</small>
+                    }
+                    @if(formulaire.get('message')?.hasError('minlength')) {
+                        <small class="text-danger">Le message est trop court (10 car. min)</small>
+                    }
+                    @if(formulaire.get('message')?.hasError('maxlength')) {
+                        <small class="text-danger">Le message est trop long (200 car. max)</small>
+                    }
+                }
+            </div>
+
+            <div>
+                <button type="submit" id="btnSendForm" class="btn w-100 py-2" [disabled]="formulaire.invalid">
+                    Envoyer le message
+                </button>
+            </div>
+
+        </form>
+    </div>
 </div>

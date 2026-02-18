@@ -4,10 +4,11 @@ import { HeaderComponent } from "../../components/header-component/header-compon
 import { NotreConceptComponent } from "../../components/notre-concept-component/notre-concept-component";
 import { CarteComponent } from "../../components/carte-component/carte-component";
 import { ContactComponent } from "../../components/contact-component/contact-component";
+import { FooterComponent } from "../../components/footer-component/footer-component";
 
 @Component({
   selector: 'app-homepage',
-  imports: [MenuComponent, HeaderComponent, NotreConceptComponent, CarteComponent, ContactComponent],
+  imports: [MenuComponent, HeaderComponent, NotreConceptComponent, CarteComponent, ContactComponent, FooterComponent],
   templateUrl: './homepage.html',
   styleUrl: './homepage.scss',
 })

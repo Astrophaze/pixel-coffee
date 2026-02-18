@@ -1,0 +1,10 @@
+@use '../../../variables';
+
+footer {
+    background-color: variables.$DarkBlue;
+    #divHeader {
+        small {
+            opacity: 0.8;
+        }
+    }
+}
