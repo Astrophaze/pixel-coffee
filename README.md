@@ -1,50 +1,59 @@
-# Initier le projet pixel-coffee
+# PixelCoffee
 
-## Pré-requis 
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.4.
 
-- WSL
-- Git installé sur WSL
-- Node installé sur WSL
-- Angular CLI installé
+## Development server
 
-## Récupérer le dépôt 
+To start a local development server, run:
 
-```
-git clone https://github.com/Astrophaze/pixel-coffee.git
+```bash
+ng serve
 ```
 
-Puis, on va se rendre dans le dossier cloné avec 
+Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-```
-cd pixel-coffee/
-```
+## Code scaffolding
 
-Et là on va supprimer le répertoire .git avec 
+Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
 
-```
-rm -rf .git
+```bash
+ng generate component component-name
 ```
 
-Cette action permet de couper le lien entre mon dépôt et votre projet. Vous ne pourrez donc plus pousser vos modifications sur mon dépôt, il faudra alors exécuter la commande 
+For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
 
-```
-git init
-```
-
-Et ensuite vous pourrez pousser autant de modifications que vous voudrez, mais cette fois, sur votre dépôt à vous. Vous devrez me rendre avant la fin de la journée un lien vers votre dépôt mis à jour avec votre travail du jour. 
-
-## Démarrer le projet 
-
-Dans le répertoire du projet, effectuer 
-
-```
-npm install
+```bash
+ng generate --help
 ```
 
-Puis 
+## Building
 
-```
-ng serve --open
+To build the project run:
+
+```bash
+ng build
 ```
 
-Vous devriez avoir votre projet qui s'ouvre sur le navigateur.
+This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+
+## Running unit tests
+
+To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+
+```bash
+ng test
+```
+
+## Running end-to-end tests
+
+For end-to-end (e2e) testing, run:
+
+```bash
+ng e2e
+```
+
+Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+
+## Additional Resources
+
+For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
